@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-generator
+  namespace: log-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-generator
+  template:
+    metadata:
+      labels:
+        app: log-generator
+    spec:
+      containers:
+      - name: log-generator
+        image: alikingdom/productpricegenerator:0.1
+        env:
+        - name: DT_URL
+          value: {YOUR_DT_URL}
+        - name: DT_LOG_INGEST_TOKEN
+          value: {YOUR_DT_LOG_INGEST_TOKEN}
