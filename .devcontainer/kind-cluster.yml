@@ -18,3 +18,4 @@ nodes:
   - hostPort: 30100
     containerPort: 30100
     protocol: TCP
+- role: worker
