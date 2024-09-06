@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: log-generator
-  namespace: log-generator
+  name: product-generator
+  namespace: product-generator
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
         app: log-generator
     spec:
       containers:
-      - name: log-generator
+      - name: product-generator
         image: alikingdom/productpricegenerator:0.1
         env:
         - name: DT_URL
