@@ -34,7 +34,7 @@ sed -i "s,cpu: 300m,cpu: 100m," /workspaces/$RepositoryName/dynatrace/kubernetes
 kubectl apply -f /workspaces/$RepositoryName/dynatrace/kubernetes.yaml
 kubectl apply -f /workspaces/$RepositoryName/dynatrace/kubernetes-csi.yaml
 kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
-kubectl -n dynatrace apply -f /workspaces/$RepositoryName/dynatrace/dynakube.yaml
+# kubectl -n dynatrace apply -f /workspaces/$RepositoryName/dynatrace/dynakube.yaml
 
 #install fluentbit for log ingestion
 #helm repo add fluent https://fluent.github.io/helm-charts
